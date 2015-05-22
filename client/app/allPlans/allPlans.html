@@ -1,0 +1,32 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<div class="container" ng-controller="AllPlansCtrl as ctrl">
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">All Team Members Leave Plan <span class="pull-right">Today : {{ctrl.today|amDateFormat:'DD MMM YYYY'}}</span>
+        </div>
+        <!-- Table -->
+        <table class="table table-bordered table-striped table-hover table-responsive">
+            <thead>
+            <tr>
+                <th>PMF KEY</th>
+                <th>Leave Type</th>
+                <th>From</th>
+                <th>To</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="e in ctrl.allData">
+                <td>{{e.pmfkey | uppercase}}</td>
+                <td>{{e.title | uppercase}}</td>
+                <td>{{e.start|amDateFormat:'DD MMM YYYY'}}</td>
+                <td>{{e.end|amDateFormat:'DD MMM YYYY'}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container">
+        <center>Built using AngularJS | UIM4Z CA Technologies &copy 2015</center>
+    </div>
+</footer>

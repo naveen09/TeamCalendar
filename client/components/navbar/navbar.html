@@ -1,0 +1,29 @@
+<div class="navbar navbar-default navbar-fixed-top" ng-controller="NavbarCtrl as navCtrl">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" ng-click="isCollapsed = !isCollapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand"><i class="fa fa-calendar fa-lg"></i> UIM4Z Team Calendar<sup>
+                <i>Beta</i></sup></a>
+        </div>
+        <div collapse="isCollapsed" class="navbar-collapse collapse" id="navbar-main">
+            <ul class="nav navbar-nav">
+                <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
+                    <a ng-href="{{item.link}}">{{item.title}}</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a ng-show="navCtrl.showRefresh" class="btn btn-mini" href="#" data-toggle="tooltip"
+                       data-placement="bottom"
+                       title="Refresh Calendar" onmouseover="$(this).tooltip('show')"><i class="fa fa-refresh"></i></a>
+                </li>
+                <li><a><i class="fa fa-user"></i> Logged in as, {{username|camelCase}}</a></li>
+                <li><a ng-click="navCtrl.logout()"><i class="fa fa-sign-out"></i> Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

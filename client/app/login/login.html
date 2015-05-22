@@ -1,0 +1,18 @@
+<div class="container loginform" ng-controller="LoginCtrl as loginCtrl">
+    <center><h3><i class="fa fa-calendar"></i> {{loginCtrl.teamName}}</h3><sup>Beta</sup></center>
+    <LoginForm title="Login form" visible="loginCtrl.showModal">
+        <form role="form" ng-submit="loginCtrl.login()">
+            <div class="form-group">
+                <label for="username">Name</label>
+                <input type="text" class="form-control" id="username" placeholder="Name"
+                       ng-model="loginCtrl.username" required/>
+                </br>
+                <label for="pmfkey">PMF Key</label>
+                <input type="text" class="form-control" id="pmfkey" placeholder="PMF Key"
+                       ng-model="loginCtrl.pmfKey" required/>
+
+            </div>
+            <button type="submit" class="btn pull-right loginBtn">Login</button>
+        </form>
+    </LoginForm>
+</div>

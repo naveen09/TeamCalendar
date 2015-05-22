@@ -1,0 +1,13 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<div class="container" ng-controller="MainCtrl as mainCtrl">
+    <div class="well">
+        <span class="label label-today">Today</span>
+        <span class="label label-primary">{{username}}</span>
+    </div>
+    <calendar class="ng-cloak" ng-model="mainCtrl.eventsData"></calendar>
+</div>
+<footer class="footer">
+    <div class="container">
+        <center>Built using AngularJS | UIM4Z CA Technologies &copy 2015</center>
+    </div>
+</footer>
